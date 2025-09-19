@@ -1,11 +1,11 @@
 from Billete import Billete
 
 class Bus():
-    def __init__(self, asientosLibres, asientosOcupados = 0, identificador, billete):
+    def __init__(self, asientosLibres, asientosOcupados = 0, identificador, billetes = []):
         setAsientosLibres(asientosLibres)
         setAsientosOcupados(asientosOcupados)
         setIdentificador(identificador)
-        setBillete(billete)
+        setBilletes(billetes)
 
     def getAsientosLibres(self):
         return self.__asientosLibres
@@ -25,11 +25,11 @@ class Bus():
     def setIdentificador(self, identificador):
         self.__identificador = identificador
 
-    def getBillete(self):
-        return self.__billete
+    def getBilletes(self):
+        return self.__billetes
 
-    def setBillete(self, billete):
-        self.__billete = billete
+    def setBilletes(self, billetes):
+        self.__billetes = billetes
 
     def ventaBilletes():
         
