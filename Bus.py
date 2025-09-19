@@ -1,7 +1,7 @@
 from Billete import Billete
 
 class Bus():
-    def __init__(self, asientosLibres, asientosOcupados, identificador, billete):
+    def __init__(self, asientosLibres, asientosOcupados = 0, identificador, billete):
         setAsientosLibres(asientosLibres)
         setAsientosOcupados(asientosOcupados)
         setIdentificador(identificador)
@@ -30,4 +30,13 @@ class Bus():
 
     def setBillete(self, billete):
         self.__billete = billete
+
+    def ventaBilletes():
+        
+
+    def devolucionBilletes():
+        
+
+    def estadoVenta():
+
 
