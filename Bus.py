@@ -1,10 +1,9 @@
 from Billete import Billete
 
 class Bus():
-    def __init__(self, asientosLibres, asientosOcupados = 0, identificador, billetes = []):
+    def __init__(self, asientosLibres, asientosOcupados = 0, billetes = []):
         setAsientosLibres(asientosLibres)
         setAsientosOcupados(asientosOcupados)
-        setIdentificador(identificador)
         setBilletes(billetes)
 
     def getAsientosLibres(self):
@@ -19,24 +18,25 @@ class Bus():
     def setAsientosOcupados(self, asientos):
         self.__asientosOcupados = asientos
 
-    def getIdentificador(self):
-        return self.__identificador
-
-    def setIdentificador(self, identificador):
-        self.__identificador = identificador
-
     def getBilletes(self):
         return self.__billetes
 
     def setBilletes(self, billetes):
         self.__billetes = billetes
 
-    def ventaBilletes():
-        
+    def ventaBilletes(self, numeroBilletes):
+        if numeroBilletes > self.getAsientosLibres():
+            return "No hay asientos suficientes"
+        else:
+            self.setAsientosOcupados(self.getAsientosOcupados() + numeroBilletes)
+            self.setAsientosLibres(self.getAsientosLibres() - numeroBilletes)
 
-    def devolucionBilletes():
-        
+    def devolucionBilletes(self, numeroBilletes):
+        if numeroBilletes > self.getAsientosOcupados():
+            return "No se pueden devolver tantos billetes"
+        else:
+            self.setAsientosOcupados(self.getAsientosOcupados() - numeroBilletes)
+            self.setAsientosLibres(self.getAsientosLibres() + numeroBilletes)
 
     def estadoVenta():
-
-
+        
