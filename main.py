@@ -1,11 +1,13 @@
-from math import floor
 from Bus import Bus
 
-plazas_totales = input()
-
+plazas_totales = ""
 while plazas_totales.isnumeric() == False:
-    plazas_totales = input()
-
+            plazas_totales = input()
+            if plazas_totales.isnumeric():
+                if int(plazas_totales) > 200 or int(plazas_totales) < 1:
+                    plazas_totales = ""
+            else:
+                plazas_totales = ""
 plazas_totales = int(plazas_totales)
 
 buses = [Bus(plazas_totales)]
@@ -58,9 +60,8 @@ while opcion != 0:
                 if int(bus_seleccionado) < 0 or int(bus_seleccionado) > len(buses) -1:
                     bus_seleccionado = ""
             else:
-                bus_seleccionado = ""
-            
-        bus_seleccionado = floor(int(plazas_totales))
-        #bus_seleccionado = int(input())
+                bus_seleccionado = "" 
+        bus_seleccionado = int(bus_seleccionado)
+
     print(menu())
     opcion = int(input())
