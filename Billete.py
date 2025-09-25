@@ -2,8 +2,8 @@ from Persona import Persona
 
 class Billete:
     def __init__(self, plaza, persona):
-        self.getPlaza(plaza)
-        self.getPersona(persona)
+        self.setPlaza(plaza)
+        self.setPersona(persona)
 
     def getPlaza(self):
         return self.__plaza
