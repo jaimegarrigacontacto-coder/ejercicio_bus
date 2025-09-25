@@ -30,6 +30,7 @@ class Bus():
         else:
             self.setAsientosOcupados(self.getAsientosOcupados() + numeroBilletes)
             self.setAsientosLibres(self.getAsientosLibres() - numeroBilletes)
+            return "Transaccion realizada"
 
     def devolucionBilletes(self, numeroBilletes):
         if numeroBilletes > self.getAsientosOcupados():
@@ -37,6 +38,7 @@ class Bus():
         else:
             self.setAsientosOcupados(self.getAsientosOcupados() - numeroBilletes)
             self.setAsientosLibres(self.getAsientosLibres() + numeroBilletes)
+            return "Transaccion realizada"
 
     def estadoVenta(self):
         return f"Plazas totales: {self.getAsientosLibres() + self.getAsientosOcupados()}, Plazas vendidas: {self.getAsientosOcupados()}, Plazas libres: {self.getAsientosLibres()} "
