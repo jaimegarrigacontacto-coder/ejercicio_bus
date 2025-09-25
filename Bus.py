@@ -38,5 +38,5 @@ class Bus():
             self.setAsientosOcupados(self.getAsientosOcupados() - numeroBilletes)
             self.setAsientosLibres(self.getAsientosLibres() + numeroBilletes)
 
-    def estadoVenta():
-        
+    def estadoVenta(self):
+        return f"Plazas totales: {self.getAsientosLibres + self.getAsientosOcupados} Plazas vendidas: {self.getAsientosOcupados} Plazas libres: {self.getAsientosLibres} "
