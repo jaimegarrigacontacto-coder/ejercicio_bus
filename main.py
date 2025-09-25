@@ -4,7 +4,7 @@ plazas_totales = ""
 while plazas_totales.isnumeric() == False:
             plazas_totales = input()
             if plazas_totales.isnumeric():
-                if int(plazas_totales) > 200 or int(plazas_totales) < 1:
+                if int(plazas_totales) > 200 or int(plazas_totales) <= 30:
                     plazas_totales = ""
             else:
                 plazas_totales = ""
@@ -46,9 +46,14 @@ while opcion != 0:
     elif opcion == 3:
         print(buses[bus_seleccionado].estadoVenta())
     elif opcion == 4:
-        plazas_totales = input()
+        plazas_totales = ""
         while plazas_totales.isnumeric() == False:
             plazas_totales = input()
+            if plazas_totales.isnumeric():
+                if int(plazas_totales) > 200 or int(plazas_totales) <= 30:
+                    plazas_totales = ""
+            else:
+                plazas_totales = ""
         plazas_totales = int(plazas_totales)
         buses.append(Bus(plazas_totales))
     elif opcion == 5:
