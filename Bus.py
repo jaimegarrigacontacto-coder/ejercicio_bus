@@ -2,9 +2,9 @@ from Billete import Billete
 
 class Bus():
     def __init__(self, asientosLibres, asientosOcupados = 0, billetes = []):
-        setAsientosLibres(asientosLibres)
-        setAsientosOcupados(asientosOcupados)
-        setBilletes(billetes)
+        self.setAsientosLibres(asientosLibres)
+        self.setAsientosOcupados(asientosOcupados)
+        self.setBilletes(billetes)
 
     def getAsientosLibres(self):
         return self.__asientosLibres
@@ -39,4 +39,4 @@ class Bus():
             self.setAsientosLibres(self.getAsientosLibres() + numeroBilletes)
 
     def estadoVenta(self):
-        return f"Plazas totales: {self.getAsientosLibres + self.getAsientosOcupados} Plazas vendidas: {self.getAsientosOcupados} Plazas libres: {self.getAsientosLibres} "
+        return f"Plazas totales: {self.getAsientosLibres() + self.getAsientosOcupados()} Plazas vendidas: {self.getAsientosOcupados()} Plazas libres: {self.getAsientosLibres()} "
